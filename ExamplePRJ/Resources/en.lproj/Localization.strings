@@ -1,0 +1,25 @@
+/* 
+ Localization.strings
+  ExamplePRJ
+
+  Created by Andrei Ziamlianski on 29/09/2024.
+  
+*/
+
+"auth_signUp" = "Sign Up";
+"auth_login" = "Log In";
+
+"register_evenet" = "EVENET";
+"register_email" = "Email address";
+"register_emailPlaceholder" = "Enter email address";
+"register_password" = "Password";
+"register_passwordPlaceholder" = "Enter password";
+"register_forgot" = "Forgot password?";
+"register_text" = "I would like to receive newsletters about price changes, financial performance updates, the latest trends, and new listings via email.";
+"register_or" = "Or";
+"register_apple" = "Continue with Apple";
+"register_google" = "Continue with Google";
+"register_terms_full" = "I accept Terms and Conditions";
+"register_terms" = "Terms";
+"register_conditions" = "Conditions";
+"register_haveAccount" = "Already have an account?";

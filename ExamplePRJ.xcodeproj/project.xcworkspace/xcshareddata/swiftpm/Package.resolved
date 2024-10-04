@@ -1,0 +1,24 @@
+{
+  "originHash" : "3a6b7d4362f6435a39694c6f071844634a368ae4b6d8c16f00fba325e8dfb465",
+  "pins" : [
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit.git",
+      "state" : {
+        "revision" : "2842e6e84e82eb9a8dac0100ca90d9444b0307f4",
+        "version" : "5.7.1"
+      }
+    },
+    {
+      "identity" : "zswtappablelabel",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/zacwest/ZSWTappableLabel.git",
+      "state" : {
+        "revision" : "53ab6fc7092537a3951cf3c1efa68fbbe7434ca8",
+        "version" : "3.3.2"
+      }
+    }
+  ],
+  "version" : 3
+}
