@@ -58,10 +58,6 @@ struct NetworkFetcher {
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
-    
-//    func refreshTokenPublisher(_ request: URLRequest, _ decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<URLSession.ErasedDataTaskPublisher.Output, Error> {
-
-//    }
 }
 
 struct ApplicationError: Error, CustomStringConvertible, Equatable, Decodable {

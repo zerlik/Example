@@ -1,5 +1,5 @@
 //
-//  AuthRouter.swift
+//  AuthNetworkRouter.swift
 //  ExamplePRJ
 //
 //  Created by Andrei Ziamlianski on 04/10/2024.
