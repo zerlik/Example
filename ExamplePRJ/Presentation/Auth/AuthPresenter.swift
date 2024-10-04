@@ -9,13 +9,14 @@ import Foundation
 import Combine
 
 protocol OutputAuthRemoteDataManagerProtocol: AnyObject {
+    func networkStatus(status: NetworkAuthStatus)
 }
 
 protocol AuthPresenterProtocol: AnyObject {
     var view: AuthViewControllerProtocol? { get set }
     var repository: InputAuthRemoteDataManagerProtocol?{ get set }
     var router: AuthRouterProtocol?{ get set }
-        func didLoad()
+    func didLoad()
     
     func onTapForgotPassword()
     func onTapAgreeReceved()
@@ -66,22 +67,34 @@ final class AuthPresenter: AuthPresenterProtocol {
         // TODO: validate checked onTapAgreeReceved
         
         startLoader.send()
-       
-//        Task {
-//            let res = await repository.authSignUp(request: AuthSignUpRequest(phoneEmail: email ?? "", password: password ?? ""))
-//
-//            DispatchQueue.main.async { [weak self] in
-//                self?.stopLoader.send()
-////                guard res.veryficationType == "email" else {
-////                    // TODO: Show allert with error
-////                    return
-////                }
-//                self?.actions.navigateToApp()
-//            }
-//        }
+        repository?.registrationEmail(email: email ?? "", password: password ?? "")
     }
 }
 
 extension AuthPresenter: OutputAuthRemoteDataManagerProtocol{
     
+    func networkStatus(status: NetworkAuthStatus){
+        DispatchQueue.main.async {
+            self.stopLoader.send()
+        }
+        
+        switch status {
+        case .successRegistration, .successLogin:
+            self.router?.navigate(to: .Dissmiss)
+            
+        case .errors(let message):
+            print("ERROR--- \(message)")
+            
+        case .noNetwork:
+            print("ERROR--- NO Inet")
+        }
+    }
+}
+
+enum NetworkAuthStatus {
+    
+    case successRegistration
+    case successLogin
+    case errors( message: String)
+    case noNetwork
 }
