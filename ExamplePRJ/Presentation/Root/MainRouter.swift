@@ -8,9 +8,9 @@ import UIKit
 
 enum MainRouterCases: Equatable {
     
-    case Dissmiss
-    case Auth
-    case SignedIn
+    case dissmiss
+    case auth
+    case signedIn
     
     static func == (lhs: MainRouterCases, rhs: MainRouterCases) -> Bool {
         return true
@@ -33,16 +33,16 @@ final class MainRouter: MainRouterProtocol {
     
     func navigate(to route: MainRouterCases) {
         switch route {
-        case .Auth:
+        case .auth:
             let vc = AuthBuilder.make(dependencies: dependencies)
 //            self.view?.navigationController?.pushViewController(vc, animated: true)
             self.view?.present(vc, animated: true)
             
-        case .SignedIn: _ = 1
+        case .signedIn: _ = 1
             //            let vc = BuilderEventsList.make()
             //            self.view.navigationController?.pushViewController(vc, animated: true)
             
-        case .Dissmiss:
+        case .dissmiss:
             dissmisVC()
         }
     }

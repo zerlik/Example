@@ -79,6 +79,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1C8287E22CB07B61007730E7 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				1C9FBAE12CA86D5B00DE6652 /* ExamplePRJ */,
@@ -150,6 +151,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1C8287E22CB07B61007730E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 1C8287E12CB07B61007730E7 /* SwiftLintBuildToolPlugin */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1C9FBAF32CA86D5D00DE6652 /* Debug */ = {
@@ -376,6 +384,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1C8287E12CB07B61007730E7 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C041D642CB027790068A1C1 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
 		1CD01AE22CAE0FA80030F992 /* ZSWTappableLabel */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1CD01AE12CAE0FA80030F992 /* XCRemoteSwiftPackageReference "ZSWTappableLabel" */;

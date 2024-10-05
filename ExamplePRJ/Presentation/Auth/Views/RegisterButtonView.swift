@@ -34,9 +34,17 @@ final class RegisterButtonView: NibView {
     
     private let separatorView = SeparatorView()
     
-    private let buttonApple = NibButton(configuration: .primaryUnfilled(title: Localization.Auth.registerApple, font: UIFont.textStyle14r, image: AssetManager.Auth.logoApple, imagePlacement: .leading, foregroundColor: UIColor.mainBlack, cornerRadius: 8, borderColor: UIColor.mainGray))
+    private let buttonApple = NibButton(configuration: .primaryUnfilled(title: Localization.Auth.registerApple,
+                                                                        font: UIFont.textStyle14r, image: AssetManager.Auth.logoApple,
+                                                                        imagePlacement: .leading,
+                                                                        foregroundColor: UIColor.mainBlack,
+                                                                        cornerRadius: 8, borderColor: UIColor.mainGray))
      
-    private let buttonGoogle = NibButton(configuration: .primaryUnfilled(title: Localization.Auth.registerGoogle, font: UIFont.textStyle14r, image: AssetManager.Auth.logoGoogle, imagePlacement: .leading, foregroundColor: UIColor.mainBlack, cornerRadius: 8, borderColor: UIColor.mainGray))
+    private let buttonGoogle = NibButton(configuration: .primaryUnfilled(title: Localization.Auth.registerGoogle,
+                                                                         font: UIFont.textStyle14r, image: AssetManager.Auth.logoGoogle,
+                                                                         imagePlacement: .leading,
+                                                                         foregroundColor: UIColor.mainBlack,
+                                                                         cornerRadius: 8, borderColor: UIColor.mainGray))
     
     private var subscriptions = Set<AnyCancellable>()
     

@@ -16,17 +16,15 @@ final class AuthRootView: NibView {
     private var subscriptions = Set<AnyCancellable>()
     
     private let imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.image = AssetManager.Auth.logo
-        iv.contentMode = .scaleAspectFit
-        return iv
+        let view = UIImageView()
+        view.image = AssetManager.Auth.logo
+        view.contentMode = .scaleAspectFit
+        return view
     }()
     
     private let termsAndConditionsLabel = ZSWTappableLabel()
-    
     private let mainStack = UIStackView(axis: .vertical, spacing: 28)
     private let textfieldsStack = UIStackView(axis: .vertical, spacing: 0)
-    
     private let emailTextFieldsView = RegisterTextFieldView()
     private let passwordTextFieldsView = RegisterTextFieldView()
     private let forgotPasswordView = RegisterForgotPasswordView()
@@ -180,8 +178,18 @@ private extension AuthRootView {
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 3
         style.alignment = .left
-        let attributedString = NSMutableAttributedString(string: fullText as String, attributes: [.font : UIFont.textStyle12r, .foregroundColor : UIColor.mainGray, .paragraphStyle : style])
-        let colorAttribute: [NSAttributedString.Key : Any] = [.font : UIFont.textStyle12r, NSAttributedString.Key.foregroundColor : UIColor.mainGray, .paragraphStyle : style, .tappableRegion : true, .tappableHighlightedBackgroundColor : UIColor.clear, .tappableHighlightedForegroundColor : UIColor.mainGray, .underlineStyle : NSUnderlineStyle.single.rawValue, .underlineColor : UIColor.mainGray]
+        let attributedString = NSMutableAttributedString(string: fullText as String,
+                                                         attributes: [.font : UIFont.textStyle12r,
+                                                            .foregroundColor : UIColor.mainGray,
+                                                                      .paragraphStyle : style])
+        let colorAttribute: [NSAttributedString.Key : Any] = [.font : UIFont.textStyle12r,
+                                                              NSAttributedString.Key.foregroundColor : UIColor.mainGray,
+                                                              .paragraphStyle : style,
+                                                              .tappableRegion : true,
+                                                              .tappableHighlightedBackgroundColor : UIColor.clear,
+                                                              .tappableHighlightedForegroundColor : UIColor.mainGray,
+                                                              .underlineStyle : NSUnderlineStyle.single.rawValue,
+                                                              .underlineColor : UIColor.mainGray]
         
         var termsAttribute = colorAttribute
         termsAttribute[.tappableType] = TappableAttributeType.terms

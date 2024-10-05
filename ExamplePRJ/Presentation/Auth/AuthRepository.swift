@@ -33,7 +33,7 @@ final class AuthRepository : InputAuthRemoteDataManagerProtocol{
         
         registration?.sink(receiveCompletion: { [weak self] status in
             switch status {
-            case .failure( let error):
+            case .failure( _):
                 self?.output?.networkStatus(status: .errors(message: "somethingWrong"))
             case .finished:
                 break

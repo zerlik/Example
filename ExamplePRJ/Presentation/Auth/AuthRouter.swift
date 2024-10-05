@@ -8,8 +8,8 @@ import UIKit
 
 enum AuthRouterCases: Equatable {
     
-    case Dissmiss
-    case Onboarding
+    case dissmiss
+    case onboarding
     
     static func == (lhs: AuthRouterCases, rhs: AuthRouterCases) -> Bool {
         return true
@@ -30,12 +30,12 @@ final class AuthRouter: AuthRouterProtocol {
     
     func navigate(to route: AuthRouterCases) {
         switch route {
-        case .Onboarding: _ = 1
+        case .onboarding: _ = 1
             // MARK: Next controllers
             //            let vc = BuilderOnboarding.make()
             //            self.view?.navigationController?.pushViewController(vc, animated: true)
             
-        case .Dissmiss:
+        case .dissmiss:
             dissmisVC()
         }
     }

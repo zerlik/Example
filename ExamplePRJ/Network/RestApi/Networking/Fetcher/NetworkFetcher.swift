@@ -12,31 +12,27 @@ struct NetworkFetcher {
     
     let retries: UInt = 3
     
-    func run<T: Decodable>(_ request: URLRequest, chainedRequest: AnyPublisher<URLSession.ErasedDataTaskPublisher.Output, Error>? = nil, _ decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<T, ApplicationError> {
-        
+    func run<T: Decodable>(_ request: URLRequest,
+                           chainedRequest: AnyPublisher<URLSession.ErasedDataTaskPublisher.Output, Error>? = nil,
+                           _ decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<T, ApplicationError> {
         decoder.keyDecodingStrategy  = .convertFromSnakeCase
-        
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap{ data, response -> URLSession.ErasedDataTaskPublisher.Output in
-                
                 if let response = response as? HTTPURLResponse, response.statusCode == 401 { //   401 Invalid access token - go on refreshToken
                     let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]
                     let errMess = json?["message"] as? String
                     throw ApplicationError(statusCode: 401, nativeErrorDescription: errMess ?? "")
                 }
-                
                 if let response = response as? HTTPURLResponse,
                    !(200...299).contains(response.statusCode) {
                     if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:Any], let errMess = json["message"] as? String {
                         let statusCode = response.statusCode
                         throw ApplicationError(statusCode: statusCode, nativeErrorDescription: errMess)
                     }
-                    
                     let statusCode = response.statusCode
                     let error = NSError(domain: "", code: response.statusCode, userInfo: [:])
                     throw ApplicationError(statusCode: statusCode, nativeErrorDescription: error.debugDescription)
                 }
-                
                 if let response = response as? HTTPURLResponse, response.statusCode == 204 || response.statusCode == 201 || response.statusCode == 200{
                     if data.count == 0 {
                         let emptyData = try JSONSerialization.data(withJSONObject: true, options: .fragmentsAllowed)
@@ -76,22 +72,4 @@ struct ApplicationError: Error, CustomStringConvertible, Equatable, Decodable {
     }
     var statusCode: Int?
     var nativeErrorDescription: String?
-    
-    //"code": "NUMBER_OF_ATTEMPTS_EXCEEDED",
-    //    "message": "Number of attempts exceeded",
-    //    "args": [
-    //        "+905346819694",
-    //        "2023-01-17T13:17:42.31"
-    //    ]
-    
 }
-//case success = "Ok"
-//    case authenticationError = "You need to be authenticated first."
-//    case badRequest = "Bad request"
-//    case outdated = "The url you requested is outdated."
-//    case failed = "Network request failed."
-//    case noData = "Response returned with no data to decode."
-//    case unableToDecode = "We could not decode the response."
-//    case noNetwork = "No Internet connections."
-
-

@@ -16,22 +16,22 @@ public extension UIView {
 public class RigidSpacer: UIView {
     static func square(_ side: CGFloat) -> RigidSpacer { .init(size: .init(width: side, height: side)) }
     static func wh(_ width: CGFloat, _ height: CGFloat) -> RigidSpacer { .init(size: .init(width: width, height: height)) }
-    static func width(_ width: CGFloat) -> RigidSpacer { .init(w: width) }
-    static func height(_ height: CGFloat) -> RigidSpacer { .init(h: height) }
+    static func width(_ width: CGFloat) -> RigidSpacer { .init(width: width) }
+    static func height(_ height: CGFloat) -> RigidSpacer { .init(height: height) }
 
     init(size: CGSize) {
         super.init(frame: .zero)
         snp.makeConstraints { $0.size.equalTo(size) }
     }
     
-    init(w: CGFloat) {
+    init(width: CGFloat) {
         super.init(frame: .zero)
-        snp.makeConstraints { $0.width.equalTo(w) }
+        snp.makeConstraints { $0.width.equalTo(width) }
     }
     
-    init(h: CGFloat) {
+    init(height: CGFloat) {
         super.init(frame: .zero)
-        snp.makeConstraints { $0.height.equalTo(h) }
+        snp.makeConstraints { $0.height.equalTo(height) }
     }
 
     required init?(coder: NSCoder) { fatalError() }

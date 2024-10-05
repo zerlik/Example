@@ -17,7 +17,6 @@ protocol AuthPresenterProtocol: AnyObject {
     var repository: InputAuthRemoteDataManagerProtocol?{ get set }
     var router: AuthRouterProtocol?{ get set }
     func didLoad()
-    
     func onTapForgotPassword()
     func onTapAgreeReceved()
     func onTapApple()
@@ -40,7 +39,6 @@ final class AuthPresenter: AuthPresenterProtocol {
     init(){}
     
     func didLoad(){
-        
     }
     
     func onTapForgotPassword() {
@@ -80,11 +78,9 @@ extension AuthPresenter: OutputAuthRemoteDataManagerProtocol{
         
         switch status {
         case .successRegistration, .successLogin:
-            self.router?.navigate(to: .Dissmiss)
-            
+            self.router?.navigate(to: .dissmiss)
         case .errors(let message):
             print("ERROR--- \(message)")
-            
         case .noNetwork:
             print("ERROR--- NO Inet")
         }
@@ -92,7 +88,6 @@ extension AuthPresenter: OutputAuthRemoteDataManagerProtocol{
 }
 
 enum NetworkAuthStatus {
-    
     case successRegistration
     case successLogin
     case errors( message: String)

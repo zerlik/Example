@@ -24,7 +24,7 @@ extension NetworkRouter {
         var component = URL.baseURLComponent
         component.path = path
         component.queryItems = self.urlParams
-        var url = component.url!
+        let url = component.url!
         
         var request = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.reloadIgnoringLocalCacheData, timeoutInterval: 5.0)
         request.httpMethod = httpMethod.rawValue
@@ -43,7 +43,7 @@ extension NetworkRouter {
     }
     
     func asURLRequestForImage(url: String) throws -> URLRequest {
-        var url = URL(string: url)!
+        let url = URL(string: url)!
         var request = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.reloadIgnoringLocalCacheData, timeoutInterval: 5.0)
         request.httpMethod = httpMethod.rawValue
         

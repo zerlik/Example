@@ -28,14 +28,6 @@ final class AuthViewController: NibViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
     }
-    
-    @objc private func authButtonAction(){
-//        self.presentAuthViewController()
-    }
-    
-    @objc private func appButtonAction(){
-//        self.presentSignedInViewController()
-    }
 }
 
 extension AuthViewController: AuthViewControllerProtocol {

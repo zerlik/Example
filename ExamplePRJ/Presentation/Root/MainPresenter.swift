@@ -15,7 +15,6 @@ protocol MainPresenterProtocol: AnyObject {
     var view: MainViewControllerProtocol? { get set }
     var repository: InputMainRemoteDataManagerProtocol?{ get set }
     var router: MainRouterProtocol?{ get set }
-    
     func didLoad()
 }
 
@@ -27,9 +26,9 @@ final class MainPresenter: MainPresenterProtocol {
     
     init(){}
     
-    func didLoad(){
+    func didLoad ( ) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.router?.navigate(to: .Auth)
+            self.router?.navigate(to: .auth)
         }
     }
 }
