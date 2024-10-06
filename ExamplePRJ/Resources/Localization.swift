@@ -27,4 +27,9 @@ enum Localization {
         static let registerConditions =  "register_conditions".localized()
         static let registerHaveAccount =  "register_haveAccount".localized()
     }
+
+    enum TabBar{
+        static let home =  "tabbar_home".localized()
+        static let list =  "tabbar_list".localized()
+    }
 }

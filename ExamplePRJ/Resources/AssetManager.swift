@@ -16,4 +16,8 @@ enum AssetManager{
         static let logoApple = "logoApple".imaged()
         static let logoGoogle = "logoGoogle".imaged()
     }
+
+    enum TabBar{
+        static let add = "Add".imaged()
+    }
 }
