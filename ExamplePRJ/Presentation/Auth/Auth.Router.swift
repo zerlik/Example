@@ -23,11 +23,13 @@ protocol AuthRouterProtocol: AnyObject {
 final class AuthRouter: AuthRouterProtocol {
     
     private weak var view: UIViewController?
-    
-    init(view: UIViewController) {
+    private var dependencies: Dependencies
+
+    init(view: UIViewController, dependencies: Dependencies) {
         self.view = view
+        self.dependencies = dependencies
     }
-    
+
     func navigate(to route: AuthRouterCases) {
         switch route {
         case .onboarding: _ = 1

@@ -84,4 +84,12 @@ extension String {
     var htmlToString: String {
         return htmlToAttributedString?.string ?? ""
     }
+
+    var isEmptyOrWhitespace: Bool {
+        trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
+    var isNotEmptyOrWhitespace: Bool {
+        !isEmptyOrWhitespace
+    }
 }

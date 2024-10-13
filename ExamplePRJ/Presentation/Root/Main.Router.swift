@@ -10,8 +10,8 @@ enum MainRouterCases: Equatable {
     
     case dissmiss
     case auth
-    case signedIn
-    
+    case appTabBar
+
     static func == (lhs: MainRouterCases, rhs: MainRouterCases) -> Bool {
         return true
     }
@@ -34,14 +34,14 @@ final class MainRouter: MainRouterProtocol {
     func navigate(to route: MainRouterCases) {
         switch route {
         case .auth:
-            let vc = AuthBuilder.make(dependencies: dependencies)
+            let vc = AuthBuilder.make(dependencies)
 //            self.view?.navigationController?.pushViewController(vc, animated: true)
             self.view?.present(vc, animated: true)
-            
-        case .signedIn: _ = 1
-            //            let vc = BuilderEventsList.make()
-            //            self.view.navigationController?.pushViewController(vc, animated: true)
-            
+
+        case .appTabBar:
+            let vc = MainTabBarBuilder.make(dependencies)
+            self.view?.navigationController?.pushViewController(vc, animated: true)
+
         case .dissmiss:
             dissmisVC()
         }

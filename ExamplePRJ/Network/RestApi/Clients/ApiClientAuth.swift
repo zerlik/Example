@@ -9,20 +9,18 @@ import Foundation
 import Combine
 
 protocol ApiClientAuthProtocols {
-    
     func login(requestData: Data, registrationToken: String) -> AnyPublisher<TokenModelResponse, ApplicationError>?
-    func registration(requestData: Data, registrationToken: String) -> AnyPublisher<TokenModelResponse, ApplicationError>?
+    func registration(requestData: Data, registrationToken: String
+    ) -> AnyPublisher<TokenModelResponse, ApplicationError>?
 }
 
 final class ApiClientAuth: ApiClientAuthProtocols {
-    
     private let network: NetworkFetcher
-    
     init(network: NetworkFetcher) {
         self.network = network
     }
-    
-    func registration(requestData: Data, registrationToken: String) -> AnyPublisher<TokenModelResponse, ApplicationError>?{
+    func registration(requestData: Data, registrationToken: String
+    ) -> AnyPublisher<TokenModelResponse, ApplicationError>? {
         var request: URLRequest?
         do {
             request = try AuthNetworkRouter.registrationEmail(body: requestData, registrationToken: registrationToken).asURLRequest()
@@ -31,11 +29,10 @@ final class ApiClientAuth: ApiClientAuthProtocols {
             return nil
         }
         guard let request = request else{ return nil }// case only for dev
-        
         return network.run(request)
             .eraseToAnyPublisher()
     }
-    
+
     func login(requestData: Data, registrationToken: String) -> AnyPublisher<TokenModelResponse, ApplicationError>?{
         var request: URLRequest?
         do {
@@ -45,9 +42,7 @@ final class ApiClientAuth: ApiClientAuthProtocols {
             return nil
         }
         guard let request = request else{ return nil }// case only for dev
-        
         return network.run(request)
             .eraseToAnyPublisher()
     }
 }
-

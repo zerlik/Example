@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C48EB852CB75F3D00220948 /* CGRPCZlib in Frameworks */ = {isa = PBXBuildFile; productRef = 1C48EB842CB75F3D00220948 /* CGRPCZlib */; };
+		1C48EB872CB75F3D00220948 /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 1C48EB862CB75F3D00220948 /* GRPC */; };
+		1C48EB892CB75F3D00220948 /* GRPCReflectionService in Frameworks */ = {isa = PBXBuildFile; productRef = 1C48EB882CB75F3D00220948 /* GRPCReflectionService */; };
+		1C48EB8B2CB75F3D00220948 /* _GRPCCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1C48EB8A2CB75F3D00220948 /* _GRPCCore */; };
+		1C48EB8D2CB75F3D00220948 /* _GRPCHTTP2Transport in Frameworks */ = {isa = PBXBuildFile; productRef = 1C48EB8C2CB75F3D00220948 /* _GRPCHTTP2Transport */; };
 		1CD01AE32CAE0FA80030F992 /* ZSWTappableLabel in Frameworks */ = {isa = PBXBuildFile; productRef = 1CD01AE22CAE0FA80030F992 /* ZSWTappableLabel */; };
 		1CE12C0E2CA9CB2200BD11AA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1CE12C0D2CA9CB2200BD11AA /* SnapKit */; };
 /* End PBXBuildFile section */
@@ -41,8 +46,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C48EB892CB75F3D00220948 /* GRPCReflectionService in Frameworks */,
+				1C48EB8B2CB75F3D00220948 /* _GRPCCore in Frameworks */,
+				1C48EB8D2CB75F3D00220948 /* _GRPCHTTP2Transport in Frameworks */,
+				1C48EB872CB75F3D00220948 /* GRPC in Frameworks */,
 				1CE12C0E2CA9CB2200BD11AA /* SnapKit in Frameworks */,
 				1CD01AE32CAE0FA80030F992 /* ZSWTappableLabel in Frameworks */,
+				1C48EB852CB75F3D00220948 /* CGRPCZlib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +89,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				1C8287E22CB07B61007730E7 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				1C9FBAE12CA86D5B00DE6652 /* ExamplePRJ */,
@@ -88,6 +97,11 @@
 			packageProductDependencies = (
 				1CE12C0D2CA9CB2200BD11AA /* SnapKit */,
 				1CD01AE22CAE0FA80030F992 /* ZSWTappableLabel */,
+				1C48EB842CB75F3D00220948 /* CGRPCZlib */,
+				1C48EB862CB75F3D00220948 /* GRPC */,
+				1C48EB882CB75F3D00220948 /* GRPCReflectionService */,
+				1C48EB8A2CB75F3D00220948 /* _GRPCCore */,
+				1C48EB8C2CB75F3D00220948 /* _GRPCHTTP2Transport */,
 			);
 			productName = ExamplePRJ;
 			productReference = 1C9FBADF2CA86D5B00DE6652 /* ExamplePRJ.app */;
@@ -121,6 +135,7 @@
 				1CE12C0C2CA9CB2200BD11AA /* XCRemoteSwiftPackageReference "SnapKit" */,
 				1CD01AE12CAE0FA80030F992 /* XCRemoteSwiftPackageReference "ZSWTappableLabel" */,
 				1C041D642CB027790068A1C1 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+				1C48EB832CB75F3D00220948 /* XCRemoteSwiftPackageReference "grpc-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1C9FBAE02CA86D5B00DE6652 /* Products */;
@@ -152,18 +167,12 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		1C8287E22CB07B61007730E7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 1C8287E12CB07B61007730E7 /* SwiftLintBuildToolPlugin */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
 		1C9FBAF32CA86D5D00DE6652 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=iphoneos*]" = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -365,6 +374,14 @@
 				minimumVersion = 0.57.0;
 			};
 		};
+		1C48EB832CB75F3D00220948 /* XCRemoteSwiftPackageReference "grpc-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/grpc/grpc-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.24.1;
+			};
+		};
 		1CD01AE12CAE0FA80030F992 /* XCRemoteSwiftPackageReference "ZSWTappableLabel" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/zacwest/ZSWTappableLabel.git";
@@ -384,10 +401,30 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1C8287E12CB07B61007730E7 /* SwiftLintBuildToolPlugin */ = {
+		1C48EB842CB75F3D00220948 /* CGRPCZlib */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1C041D642CB027790068A1C1 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
-			productName = "plugin:SwiftLintBuildToolPlugin";
+			package = 1C48EB832CB75F3D00220948 /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = CGRPCZlib;
+		};
+		1C48EB862CB75F3D00220948 /* GRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C48EB832CB75F3D00220948 /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = GRPC;
+		};
+		1C48EB882CB75F3D00220948 /* GRPCReflectionService */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C48EB832CB75F3D00220948 /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = GRPCReflectionService;
+		};
+		1C48EB8A2CB75F3D00220948 /* _GRPCCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C48EB832CB75F3D00220948 /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = _GRPCCore;
+		};
+		1C48EB8C2CB75F3D00220948 /* _GRPCHTTP2Transport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C48EB832CB75F3D00220948 /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = _GRPCHTTP2Transport;
 		};
 		1CD01AE22CAE0FA80030F992 /* ZSWTappableLabel */ = {
 			isa = XCSwiftPackageProductDependency;

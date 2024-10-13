@@ -30,6 +30,8 @@ final class MainPresenter: MainPresenterProtocol {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.router?.navigate(to: .auth)
         }
+
+//        router?.navigate(to: .appTabBar)
     }
 }
 

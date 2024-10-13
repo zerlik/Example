@@ -9,8 +9,8 @@ import UIKit
 
 final class AuthBuilder {
     
-    static func make(dependencies: Dependencies) -> AuthViewController {
-        
+    static func make(_ dependencies: Dependencies) -> AuthViewController {
+
         let presenter: OutputAuthRemoteDataManagerProtocol & AuthPresenterProtocol = AuthPresenter()
         let repo: InputAuthRemoteDataManagerProtocol = AuthRepository(presenter, service: dependencies.service)
         
@@ -18,7 +18,7 @@ final class AuthBuilder {
         presenter.view = controller as AuthViewControllerProtocol
         presenter.repository = repo
         
-        let router: AuthRouterProtocol = AuthRouter(view: controller)
+        let router: AuthRouterProtocol = AuthRouter(view: controller, dependencies: dependencies)
         presenter.router = router
         
         controller.modalPresentationStyle = .fullScreen

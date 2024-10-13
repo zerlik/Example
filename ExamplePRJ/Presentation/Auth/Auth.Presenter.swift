@@ -65,7 +65,8 @@ final class AuthPresenter: AuthPresenterProtocol {
         // TODO: validate checked onTapAgreeReceved
         
         startLoader.send()
-        repository?.registrationEmail(email: email ?? "", password: password ?? "")
+//        repository?.registrationEmailREST(email: email ?? "", password: password ?? "")
+        repository?.addUserGRPC(login: email ?? "" + "inLONDON", city: "LONDON", email: email ?? "")
     }
 }
 

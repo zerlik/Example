@@ -5,8 +5,11 @@
 //  Created by Andrei Ziamlianski on 28/09/2024.
 //
 
+import UIKit
+
 struct Dependencies {
     let service: NetworkProvider
+    let userSession: UserSession
 }
 
 final class AppDIContainer {
@@ -17,12 +20,19 @@ final class AppDIContainer {
     init() {
         self.appConfiguration = AppConfiguration()
         self.appCustomization = AppCustomization()
+        
     }
 }
 
 extension AppDIContainer {
-    func makeMainViewController() -> MainViewController {
-        let dependencies = Dependencies(service: NetworkProvider())
-        return MainBuilder.make(dependencies)
+    func makeMainViewController() -> UINavigationController {
+        
+        let network = NetworkProvider()
+        let userSession = UserSession()
+        let dependencies = Dependencies(service: network, userSession: userSession)
+        
+        return MainBuilder.makeNavigation(dependencies)
     }
 }
+
+
