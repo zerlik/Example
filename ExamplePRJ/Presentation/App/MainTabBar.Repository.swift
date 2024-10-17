@@ -22,6 +22,4 @@ final class MainTabBarRepository : InputMainTabBarRemoteDataManagerProtocol{
         self.output = output
         self.service = service
     }
-
 }
-

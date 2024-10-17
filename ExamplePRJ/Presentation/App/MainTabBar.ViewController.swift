@@ -15,8 +15,11 @@ protocol MainTabBarViewControllerProtocol: AnyObject {
 final class MainTabBarViewController: NibTabBarController {
 
     private var presenter: MainTabBarPresenterProtocol?
-
     private var subscriptions = Set<AnyCancellable>()
+
+    private var customTabBarView = MainTabBarRootView()
+    private let mainStack = UIStackView(axis: .vertical, spacing: 0)
+    private let tabBarHeight: CGFloat = 80
 
     init(
         presenter: MainTabBarPresenterProtocol
@@ -24,92 +27,62 @@ final class MainTabBarViewController: NibTabBarController {
         self.presenter = presenter
         super.init()
         constructHierarchy()
-//        delegate = self
+        activateConstraints()
+        style()
+        bind()
+        delegate = self
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.didLoad()
-        view.backgroundColor = .yellow
-        bind()
     }
 }
 
 private extension MainTabBarViewController {
 
     func constructHierarchy() {
-//        var vcs: [UIViewController] = []
-//
-//        let homeVC = factory.makeHomeNavigationController()
-//        homeVC.tabBarItem = UITabBarItem(
-//            title: Localization.TabBar.home,
-//            image: .checkmark,
-//            selectedImage: nil
-//        )
-//        vcs.append(homeVC)
-//
-//        let listVC = factory.makeHomeNavigationController()
-//        listVC.tabBarItem = UITabBarItem(
-//            title: Localization.TabBar.list,
-//            image: .checkmark,
-//            selectedImage: nil
-//        )
-//        vcs.append(listVC)
-//        let home = viewControllers.first 
+        self.tabBar.isHidden = true
+        self.view.addSubview(mainStack)
+        mainStack.addArrangedSubviews(customTabBarView)
     }
 
     func bind() {
-//        viewModel
-//            .$navigationAction
-//            .removeDuplicates()
-//            .receive(on: DispatchQueue.main)
-//            .sink { [weak self] action in self?.respond(to: action) }
-//            .store(in: &subscriptions)
+        customTabBarView.onTapHome
+            .sink { [weak self] _ in
+                self?.selectedIndex = 0
+            }
+            .store(in: &subscriptions)
+        customTabBarView.onTapList
+            .sink { [weak self] _ in
+                self?.selectedIndex = 1
+            }
+            .store(in: &subscriptions)
+        customTabBarView.onTapList
+            .sink { [weak self] _ in
+                self?.selectedIndex = 2
+            }
+            .store(in: &subscriptions)
     }
 
-//    func respond(to navigationAction: SignedInNavigationAction) {
-//        switch navigationAction {
-//            case .present(let view):
-//                show(view)
-//            case .presented:
-//                break
-//        }
-//    }
-
-    func show(_ view: MainTabBarView) {
-//        selectedViewController = viewController(associatedWith: view)
+    func activateConstraints() {
+        mainStack.snp.makeConstraints { make in
+            make.height.equalTo(tabBarHeight)
+            make.bottom.equalToSuperview()
+            make.horizontalEdges.equalToSuperview()
+        }
     }
 
-//    func viewController(associatedWith view: SignedInView) -> UIViewController? {
-//        viewControllers?.first(where: { vc in
-//            switch view {
-//            case .home: return vc is HomeNavigationController
-//            case .account: return vc is AccountNavigationController
-//            case .cmr: return vc is HomeNavigationController
-//            case .search: return vc is HomeNavigationController
-//            case .garage: return vc is HomeNavigationController
-//            }
-//        })
-//    }
-
-//    func signedInView(associatedWith viewController: UIViewController) -> SignedInView? {
-//        switch viewController {
-//        case is HomeNavigationController: return .home
-//        case is AccountNavigationController: return .account
-//        default:
-//            assertionFailure("Encountered unexpected child view controller type")
-//            return nil
-//        }
-//    }
+    func style() {
+        view.backgroundColor = .clear
+    }
 }
 
 extension MainTabBarViewController: MainTabBarViewControllerProtocol{}
 
 extension MainTabBarViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-//        guard let shownView = signedInView(associatedWith: viewController) else { return }
-//        viewModel.uiPresented(shownView: shownView)
-//        HapticGenerator.button()
+
     }
 }
 

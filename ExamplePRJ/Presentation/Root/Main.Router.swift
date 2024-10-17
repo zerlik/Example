@@ -34,12 +34,12 @@ final class MainRouter: MainRouterProtocol {
     func navigate(to route: MainRouterCases) {
         switch route {
         case .auth:
-            let vc = AuthBuilder.make(dependencies)
+            let vc = AuthBuilder().makeVC(dependencies)
 //            self.view?.navigationController?.pushViewController(vc, animated: true)
             self.view?.present(vc, animated: true)
 
         case .appTabBar:
-            let vc = MainTabBarBuilder.make(dependencies)
+            let vc = MainTabBarBuilder().makeVC(dependencies)
             self.view?.navigationController?.pushViewController(vc, animated: true)
 
         case .dissmiss:

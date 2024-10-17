@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 protocol OutputMainTabBarRemoteDataManagerProtocol: AnyObject {
     func networkStatus(status: NetworkMainTabBarStatus)
@@ -29,11 +30,11 @@ final class MainTabBarPresenter: MainTabBarPresenterProtocol {
 
     init(){}
 
+
     func didLoad(){
-        DispatchQueue.main.async{
+        DispatchQueue.main.async {
             self.router?.navigate(to: .createTabBarControllers)
         }
-
     }
 }
 

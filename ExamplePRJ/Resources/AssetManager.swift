@@ -18,6 +18,8 @@ enum AssetManager{
     }
 
     enum TabBar{
-        static let add = "Add".imaged()
+        static let add = "Hearttick".imaged()
+        static let home = "Profile".imaged()
+        static let list = "Search".imaged()
     }
 }

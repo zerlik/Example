@@ -96,7 +96,7 @@ private extension AuthRootView {
     }
     
     func bind(){
-        // SignUP txfields + button
+        //MARK: for SignUP txfields + button
         let passPub = CurrentValueSubject<String?,Never>("")
         let emailPub = CurrentValueSubject<String?,Never>("")
         passwordTextFieldsView.textPublisher.sink { val in
@@ -226,7 +226,6 @@ extension AuthRootView: ZSWTappableLabelTapDelegate {
     }
 }
 
-// MARK: Tappable
 fileprivate enum TappableAttributeType {
     case conditions
     case terms

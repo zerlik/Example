@@ -30,8 +30,8 @@ extension AppDIContainer {
         let network = NetworkProvider()
         let userSession = UserSession()
         let dependencies = Dependencies(service: network, userSession: userSession)
-        
-        return MainBuilder.makeNavigation(dependencies)
+
+        return MainBuilder().makeNavigation(dependencies)
     }
 }
 

@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class AuthBuilder {
-    
-    static func make(_ dependencies: Dependencies) -> AuthViewController {
+final class AuthBuilder: Builders {
+
+    func makeVC(_ dependencies: Dependencies) -> UIViewController {
 
         let presenter: OutputAuthRemoteDataManagerProtocol & AuthPresenterProtocol = AuthPresenter()
         let repo: InputAuthRemoteDataManagerProtocol = AuthRepository(presenter, service: dependencies.service)

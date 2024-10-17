@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class MainTabBarBuilder {
+final class MainTabBarBuilder: Builders {
 
-    static func make(_ dependencies: Dependencies) -> MainTabBarViewController {
+    func makeVC(_ dependencies: Dependencies) -> UIViewController {
 
         let presenter: OutputMainTabBarRemoteDataManagerProtocol & MainTabBarPresenterProtocol = MainTabBarPresenter()
         let repo: InputMainTabBarRemoteDataManagerProtocol = MainTabBarRepository(presenter, service: dependencies.service)

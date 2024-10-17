@@ -7,10 +7,15 @@
 
 import UIKit
 
-final class MainBuilder {
+protocol Builders{
+    func makeVC(_ dependencies: Dependencies) -> UIViewController
+    func makeNavigation(_ dependencies: Dependencies) -> UINavigationController
+}
 
-    static func make(_ dependencies: Dependencies) -> MainViewController {
-        
+final class MainBuilder: Builders {
+
+    func makeVC(_ dependencies: Dependencies) -> UIViewController {
+
         let presenter: OutputMainRemoteDataManagerProtocol & MainPresenterProtocol = MainPresenter()
         let repo: InputMainRemoteDataManagerProtocol = MainRepository(presenter, service: dependencies.service)
         
@@ -25,10 +30,13 @@ final class MainBuilder {
         
         return controller
     }
+}
 
-    static func makeNavigation(_ dependencies: Dependencies) -> UINavigationController {
+extension Builders {
 
-        let cont = self.make(dependencies)
+    func makeNavigation(_ dependencies: Dependencies) -> UINavigationController {
+
+        let cont = makeVC(dependencies)
         let navigationController = UINavigationController(rootViewController: cont)
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.isNavigationBarHidden = true

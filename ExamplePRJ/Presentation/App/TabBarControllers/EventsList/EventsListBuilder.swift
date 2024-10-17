@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class EventsListBuilder {
+final class EventsListBuilder: Builders {
 
-    static func make(_ dependencies: Dependencies) -> EventsListViewController {
+    func makeVC(_ dependencies: Dependencies) -> UIViewController {
 
         let presenter: OutputEventsListRemoteDataManagerProtocol & EventsListPresenterProtocol = EventsListPresenter()
         let repo: InputEventsListRemoteDataManagerProtocol = EventsListRepository(presenter, service: dependencies.service)
@@ -24,17 +24,6 @@ final class EventsListBuilder {
         controller.modalPresentationStyle = .fullScreen
 
         return controller
-    }
-
-    static func makeNavigation(_ dependencies: Dependencies) -> UINavigationController {
-
-        let cont = self.make(dependencies)
-        let navigationController = UINavigationController(rootViewController: cont)
-        navigationController.modalPresentationStyle = .fullScreen
-        navigationController.isNavigationBarHidden = true
-        navigationController.hidesBottomBarWhenPushed = true
-
-        return navigationController
     }
 }
 

@@ -26,12 +26,12 @@ final class MainPresenter: MainPresenterProtocol {
     
     init(){}
     
-    func didLoad ( ) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.router?.navigate(to: .auth)
-        }
+    func didLoad () {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+//            self.router?.navigate(to: .auth)
+//        }
 
-//        router?.navigate(to: .appTabBar)
+        router?.navigate(to: .appTabBar)
     }
 }
 

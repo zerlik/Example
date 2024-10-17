@@ -45,7 +45,8 @@ final class AuthRepository : InputAuthRemoteDataManagerProtocol{
             self.output?.networkStatus(status: .successRegistration)
         }).store(in: &self.cancellables)
     }
-
+    
+    //USING gRPC API 
     func addUserGRPC(login: String, city: String, email: String) {
         var requestModel: ClientsInfoRequest = ClientsInfoRequest()
         requestModel.clientsinfo = [ClientInfoRequest.with {

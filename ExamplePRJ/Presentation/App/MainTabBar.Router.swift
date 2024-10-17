@@ -32,20 +32,20 @@ final class MainTabBarRouter: MainTabBarRouterProtocol {
     }
 
     func navigate(to route: MainTabBarRouterCases) {
-        
+
         switch route {
+
         case .createTabBarControllers:
-            let firstViewController = EventsListBuilder.makeNavigation(dependencies)
-            let secondViewController = UIViewController()//BuilderList.makeNavigation()
-            let thirdViewController = UIViewController()//BuilderAdd.makeNavigation()
-            let fothViewController = EventsListBuilder.makeNavigation(dependencies)
+            let firstViewController = EventsListBuilder().makeNavigation(dependencies)
+            let secondViewController = HomeBuilder().makeNavigation(dependencies)
 
             if let vc = self.view as? MainTabBarViewController {
-                vc.viewControllers = [firstViewController, secondViewController, thirdViewController, fothViewController]
+                vc.viewControllers = [firstViewController, secondViewController]
             }
+
         case .dissmiss:
             dissmisVC()
-        
+
         }
     }
 
