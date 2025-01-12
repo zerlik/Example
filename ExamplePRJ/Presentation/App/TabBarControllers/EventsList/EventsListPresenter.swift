@@ -34,9 +34,6 @@ final class EventsListPresenter: EventsListPresenterProtocol {
 extension EventsListPresenter: OutputEventsListRemoteDataManagerProtocol{
 
     func networkStatus(status: NetworkEventsListStatus){
-        DispatchQueue.main.async {
-//            self.stopLoader.send()
-        }
 
         switch status {
         case .success:

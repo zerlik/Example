@@ -12,12 +12,26 @@
 		1C48EB892CB75F3D00220948 /* GRPCReflectionService in Frameworks */ = {isa = PBXBuildFile; productRef = 1C48EB882CB75F3D00220948 /* GRPCReflectionService */; };
 		1C48EB8B2CB75F3D00220948 /* _GRPCCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1C48EB8A2CB75F3D00220948 /* _GRPCCore */; };
 		1C48EB8D2CB75F3D00220948 /* _GRPCHTTP2Transport in Frameworks */ = {isa = PBXBuildFile; productRef = 1C48EB8C2CB75F3D00220948 /* _GRPCHTTP2Transport */; };
+		1CC848582D345AE400CCB911 /* email-stubs.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1CC848572D345AE400CCB911 /* email-stubs.xml */; };
+		1CC8485B2D34637F00CCB911 /* email-stubs.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1CC848572D345AE400CCB911 /* email-stubs.xml */; };
 		1CD01AE32CAE0FA80030F992 /* ZSWTappableLabel in Frameworks */ = {isa = PBXBuildFile; productRef = 1CD01AE22CAE0FA80030F992 /* ZSWTappableLabel */; };
 		1CE12C0E2CA9CB2200BD11AA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1CE12C0D2CA9CB2200BD11AA /* SnapKit */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1CC8484E2D345A2800CCB911 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C9FBAD72CA86D5B00DE6652 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C9FBADE2CA86D5B00DE6652;
+			remoteInfo = ExamplePRJ;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1C9FBADF2CA86D5B00DE6652 /* ExamplePRJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExamplePRJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CC8484A2D345A2800CCB911 /* ExamplePRJTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExamplePRJTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CC848572D345AE400CCB911 /* email-stubs.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "email-stubs.xml"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -39,6 +53,11 @@
 			path = ExamplePRJ;
 			sourceTree = "<group>";
 		};
+		1CC8484B2D345A2800CCB911 /* ExamplePRJTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ExamplePRJTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +75,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1CC848472D345A2800CCB911 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		1C9FBAD62CA86D5B00DE6652 = {
 			isa = PBXGroup;
 			children = (
+				1CC848572D345AE400CCB911 /* email-stubs.xml */,
+				1CC848442D34597000CCB911 /* Tests */,
 				1C9FBAE12CA86D5B00DE6652 /* ExamplePRJ */,
+				1CC8484B2D345A2800CCB911 /* ExamplePRJTests */,
 				1C9FBAE02CA86D5B00DE6652 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,8 +100,16 @@
 			isa = PBXGroup;
 			children = (
 				1C9FBADF2CA86D5B00DE6652 /* ExamplePRJ.app */,
+				1CC8484A2D345A2800CCB911 /* ExamplePRJTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1CC848442D34597000CCB911 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +144,29 @@
 			productReference = 1C9FBADF2CA86D5B00DE6652 /* ExamplePRJ.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1CC848492D345A2800CCB911 /* ExamplePRJTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CC848502D345A2800CCB911 /* Build configuration list for PBXNativeTarget "ExamplePRJTests" */;
+			buildPhases = (
+				1CC848462D345A2800CCB911 /* Sources */,
+				1CC848472D345A2800CCB911 /* Frameworks */,
+				1CC848482D345A2800CCB911 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1CC8484F2D345A2800CCB911 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1CC8484B2D345A2800CCB911 /* ExamplePRJTests */,
+			);
+			name = ExamplePRJTests;
+			packageProductDependencies = (
+			);
+			productName = ExamplePRJTests;
+			productReference = 1CC8484A2D345A2800CCB911 /* ExamplePRJTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -114,11 +174,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
+				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					1C9FBADE2CA86D5B00DE6652 = {
 						CreatedOnToolsVersion = 16.0;
+					};
+					1CC848492D345A2800CCB911 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 1C9FBADE2CA86D5B00DE6652;
 					};
 				};
 			};
@@ -143,6 +207,7 @@
 			projectRoot = "";
 			targets = (
 				1C9FBADE2CA86D5B00DE6652 /* ExamplePRJ */,
+				1CC848492D345A2800CCB911 /* ExamplePRJTests */,
 			);
 		};
 /* End PBXProject section */
@@ -152,6 +217,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CC8485B2D34637F00CCB911 /* email-stubs.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CC848482D345A2800CCB911 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CC848582D345AE400CCB911 /* email-stubs.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +239,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1CC848462D345A2800CCB911 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1CC8484F2D345A2800CCB911 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1C9FBADE2CA86D5B00DE6652 /* ExamplePRJ */;
+			targetProxy = 1CC8484E2D345A2800CCB911 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1C9FBAF32CA86D5D00DE6652 /* Debug */ = {
@@ -342,6 +431,44 @@
 			};
 			name = Release;
 		};
+		1CC848512D345A2800CCB911 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S58FZLDBPQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = home.proj.ExamplePRJTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExamplePRJ.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ExamplePRJ";
+			};
+			name = Debug;
+		};
+		1CC848522D345A2800CCB911 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S58FZLDBPQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = home.proj.ExamplePRJTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExamplePRJ.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ExamplePRJ";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -359,6 +486,15 @@
 			buildConfigurations = (
 				1C9FBAF32CA86D5D00DE6652 /* Debug */,
 				1C9FBAF42CA86D5D00DE6652 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1CC848502D345A2800CCB911 /* Build configuration list for PBXNativeTarget "ExamplePRJTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CC848512D345A2800CCB911 /* Debug */,
+				1CC848522D345A2800CCB911 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

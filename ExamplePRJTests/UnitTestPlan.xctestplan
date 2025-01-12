@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "99E46E90-86A1-48D4-98AE-291E5D809AF8",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:ExamplePRJ.xcodeproj",
+        "identifier" : "1CC848492D345A2800CCB911",
+        "name" : "ExamplePRJTests"
+      }
+    }
+  ],
+  "version" : 1
+}

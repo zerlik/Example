@@ -32,7 +32,7 @@ extension String {
     //    }
     
     func localized(withComment comment: String = "") -> String {
-        return NSLocalizedString(self, tableName: "Localization", bundle: Bundle.module, value: "", comment: comment)
+        return NSLocalizedString(self, tableName: "Localization", bundle: BundleHelper.bundle(), value: "", comment: comment)
     }
     
     func strikeThrough() -> NSAttributedString {

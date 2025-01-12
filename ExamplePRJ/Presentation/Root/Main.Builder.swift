@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol Builders{
-    func makeVC(_ dependencies: Dependencies) -> UIViewController
-    func makeNavigation(_ dependencies: Dependencies) -> UINavigationController
-}
-
 final class MainBuilder: Builders {
 
     func makeVC(_ dependencies: Dependencies) -> UIViewController {
@@ -30,6 +25,11 @@ final class MainBuilder: Builders {
         
         return controller
     }
+}
+
+protocol Builders{
+    func makeVC(_ dependencies: Dependencies) -> UIViewController
+    func makeNavigation(_ dependencies: Dependencies) -> UINavigationController
 }
 
 extension Builders {

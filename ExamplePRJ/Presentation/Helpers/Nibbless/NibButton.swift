@@ -17,7 +17,7 @@ class NibButton: UIButton {
         
         tapPublisher
             .sink {
-//                HapticGenerator.button() // MARK: if nessesary for tapable button
+// MARK: if nessesary for tapable button
             }
             .store(in: &subscriptions)
         titleLabel?.adjustsFontForContentSizeCategory = true
