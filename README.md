@@ -1,7 +1,11 @@
-# VIPER(SwiftUIkit + SwiftUI) + With UnitTests
+# VIPER(SwiftUIkit, SwiftUI) + UnitTests
+Project Overview
+This demonstration project highlights my expertise in Swift, SwiftUI, and UIKit, showcasing modern architectural patterns and testing practices.
 
-Added Tests for validation Auth Email & Passw & validation TabBarButtons
- 
-gRPC implemented as an example of a rest API substitute.
+Key Features:
+ • Architecture: VIPER (with SwiftUIkit + SwiftUI) and scalable modularization using dynamic development libraries.
+ • Testing: Comprehensive unit tests, including validation for authentication (email and password) and TabBar button functionality.
+ • API Implementation: gRPC as a REST API substitute to demonstrate flexibility in API integrations.
+ • Tech Stack: SwiftUIkit, SwiftUI, Combine, SnapKit, gRPC, adhering to SOLID principles and Clean Architecture.
 
-Tech stack: SwiftUIkit + SwiftUI, Combine, Snapkit, Viper + scalable modularization(dynamic dev-Lib), gRPC, SOLID + Clean
+This project is a testament to my ability to create scalable, testable, and maintainable applications, leveraging advanced iOS development techniques.
