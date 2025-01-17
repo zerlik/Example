@@ -19,6 +19,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1C05F8692D3AC55F0061BABC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C9FBAD72CA86D5B00DE6652 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C9FBADE2CA86D5B00DE6652;
+			remoteInfo = ExamplePRJ;
+		};
 		1CC8484E2D345A2800CCB911 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1C9FBAD72CA86D5B00DE6652 /* Project object */;
@@ -29,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C05F8632D3AC55F0061BABC /* ExamplePRJUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExamplePRJUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C9FBADF2CA86D5B00DE6652 /* ExamplePRJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExamplePRJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CC8484A2D345A2800CCB911 /* ExamplePRJTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExamplePRJTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CC848572D345AE400CCB911 /* email-stubs.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "email-stubs.xml"; sourceTree = "<group>"; };
@@ -45,6 +53,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		1C05F8642D3AC55F0061BABC /* ExamplePRJUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ExamplePRJUITests;
+			sourceTree = "<group>";
+		};
 		1C9FBAE12CA86D5B00DE6652 /* ExamplePRJ */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -61,6 +74,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1C05F8602D3AC55F0061BABC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1C9FBADC2CA86D5B00DE6652 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -89,9 +109,9 @@
 			isa = PBXGroup;
 			children = (
 				1CC848572D345AE400CCB911 /* email-stubs.xml */,
-				1CC848442D34597000CCB911 /* Tests */,
 				1C9FBAE12CA86D5B00DE6652 /* ExamplePRJ */,
 				1CC8484B2D345A2800CCB911 /* ExamplePRJTests */,
+				1C05F8642D3AC55F0061BABC /* ExamplePRJUITests */,
 				1C9FBAE02CA86D5B00DE6652 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,20 +121,37 @@
 			children = (
 				1C9FBADF2CA86D5B00DE6652 /* ExamplePRJ.app */,
 				1CC8484A2D345A2800CCB911 /* ExamplePRJTests.xctest */,
+				1C05F8632D3AC55F0061BABC /* ExamplePRJUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		1CC848442D34597000CCB911 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1C05F8622D3AC55F0061BABC /* ExamplePRJUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C05F86B2D3AC55F0061BABC /* Build configuration list for PBXNativeTarget "ExamplePRJUITests" */;
+			buildPhases = (
+				1C05F85F2D3AC55F0061BABC /* Sources */,
+				1C05F8602D3AC55F0061BABC /* Frameworks */,
+				1C05F8612D3AC55F0061BABC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1C05F86A2D3AC55F0061BABC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1C05F8642D3AC55F0061BABC /* ExamplePRJUITests */,
+			);
+			name = ExamplePRJUITests;
+			packageProductDependencies = (
+			);
+			productName = ExamplePRJUITests;
+			productReference = 1C05F8632D3AC55F0061BABC /* ExamplePRJUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		1C9FBADE2CA86D5B00DE6652 /* ExamplePRJ */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C9FBAF22CA86D5D00DE6652 /* Build configuration list for PBXNativeTarget "ExamplePRJ" */;
@@ -177,6 +214,10 @@
 				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					1C05F8622D3AC55F0061BABC = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 1C9FBADE2CA86D5B00DE6652;
+					};
 					1C9FBADE2CA86D5B00DE6652 = {
 						CreatedOnToolsVersion = 16.0;
 					};
@@ -208,11 +249,19 @@
 			targets = (
 				1C9FBADE2CA86D5B00DE6652 /* ExamplePRJ */,
 				1CC848492D345A2800CCB911 /* ExamplePRJTests */,
+				1C05F8622D3AC55F0061BABC /* ExamplePRJUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1C05F8612D3AC55F0061BABC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1C9FBADD2CA86D5B00DE6652 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,6 +281,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1C05F85F2D3AC55F0061BABC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1C9FBADB2CA86D5B00DE6652 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -249,6 +305,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1C05F86A2D3AC55F0061BABC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1C9FBADE2CA86D5B00DE6652 /* ExamplePRJ */;
+			targetProxy = 1C05F8692D3AC55F0061BABC /* PBXContainerItemProxy */;
+		};
 		1CC8484F2D345A2800CCB911 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1C9FBADE2CA86D5B00DE6652 /* ExamplePRJ */;
@@ -257,6 +318,42 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		1C05F86C2D3AC55F0061BABC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S58FZLDBPQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = home.proj.ExamplePRJUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ExamplePRJ;
+			};
+			name = Debug;
+		};
+		1C05F86D2D3AC55F0061BABC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S58FZLDBPQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = home.proj.ExamplePRJUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ExamplePRJ;
+			};
+			name = Release;
+		};
 		1C9FBAF32CA86D5D00DE6652 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -472,6 +569,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1C05F86B2D3AC55F0061BABC /* Build configuration list for PBXNativeTarget "ExamplePRJUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C05F86C2D3AC55F0061BABC /* Debug */,
+				1C05F86D2D3AC55F0061BABC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1C9FBADA2CA86D5B00DE6652 /* Build configuration list for PBXProject "ExamplePRJ" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -30,7 +30,7 @@ final class MainTabBarRootView: NibView {
         case add
     }
 
-    private let buttonHome = NibButton(configuration:
+    private(set) var buttonHome = NibButton(configuration:
             .primaryUnfilled(title: Localization.TabBar.home,
                              font: UIFont.textStyle12r,
                              image: AssetManager.TabBar.home,
@@ -38,7 +38,7 @@ final class MainTabBarRootView: NibView {
                              backgroundColor: .white,
                              foregroundColor: UIColor.white))
 
-    private let buttonList = NibButton(configuration:
+    private(set) var buttonList = NibButton(configuration:
             .primaryUnfilled(title: Localization.TabBar.list,
                              font: UIFont.textStyle12r,
                              image: AssetManager.TabBar.list,
@@ -46,7 +46,7 @@ final class MainTabBarRootView: NibView {
                              backgroundColor: .white,
                              foregroundColor: UIColor.white))
 
-    private let buttonAdd = NibButton(configuration:
+    private(set) var buttonAdd = NibButton(configuration:
             .primaryUnfilled(title: Localization.TabBar.add,
                              font: UIFont.textStyle12r,
                              image: AssetManager.TabBar.add,
@@ -60,6 +60,7 @@ final class MainTabBarRootView: NibView {
         activateConstraints()
         style()
         bind()
+        buttonHome.accessibilityIdentifier = "TabBarButtonHome"
     }
 }
 

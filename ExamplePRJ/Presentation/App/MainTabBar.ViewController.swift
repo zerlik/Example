@@ -17,7 +17,7 @@ final class MainTabBarViewController: NibTabBarController {
     private var presenter: MainTabBarPresenterProtocol?
     private var subscriptions = Set<AnyCancellable>()
 
-    private var customTabBarView = MainTabBarRootView()
+    private(set) var customTabBarView = MainTabBarRootView()
     private let mainStack = UIStackView(axis: .vertical, spacing: 0)
     private let tabBarHeight: CGFloat = 80
 
