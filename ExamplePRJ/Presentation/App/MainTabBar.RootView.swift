@@ -7,7 +7,6 @@
 
 import UIKit
 import Combine
-
 final class MainTabBarRootView: NibView {
 
     private var subscriptions = Set<AnyCancellable>()

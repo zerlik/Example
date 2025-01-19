@@ -7,6 +7,7 @@
 
 
 import Combine
+import NetworkKIT
 
 protocol InputMainTabBarRemoteDataManagerProtocol: AnyObject{
 

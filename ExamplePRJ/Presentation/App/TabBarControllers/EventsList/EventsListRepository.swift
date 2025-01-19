@@ -5,6 +5,7 @@
 //  Created by Andrei Ziamlianski on 05/10/2024.
 //
 import Combine
+import NetworkKIT
 
 protocol InputEventsListRemoteDataManagerProtocol: AnyObject{
 

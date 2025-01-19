@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import ExamplePRJ
+@testable import NetworkKIT
 
 final class TabBarButtonsTests: XCTestCase {
 

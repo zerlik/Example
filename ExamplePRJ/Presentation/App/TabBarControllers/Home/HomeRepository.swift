@@ -6,6 +6,7 @@
 //
 
 import Combine
+import NetworkKIT
 
 protocol InputHomeRemoteDataManagerProtocol: AnyObject{
 

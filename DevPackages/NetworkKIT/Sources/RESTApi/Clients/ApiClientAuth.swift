@@ -8,18 +8,15 @@
 import Foundation
 import Combine
 
-protocol ApiClientAuthProtocols {
-    func login(requestData: Data, registrationToken: String) -> AnyPublisher<TokenModelResponse, ApplicationError>?
-    func registration(requestData: Data, registrationToken: String
-    ) -> AnyPublisher<TokenModelResponse, ApplicationError>?
-}
+internal final class ApiClientAuth: ApiClientAuthProtocols {
 
-final class ApiClientAuth: ApiClientAuthProtocols {
     private let network: NetworkFetcher
+
     init(network: NetworkFetcher) {
         self.network = network
     }
-    func registration(requestData: Data, registrationToken: String
+
+     func registration(requestData: Data, registrationToken: String
     ) -> AnyPublisher<TokenModelResponse, ApplicationError>? {
         var request: URLRequest?
         do {
@@ -33,7 +30,7 @@ final class ApiClientAuth: ApiClientAuthProtocols {
             .eraseToAnyPublisher()
     }
 
-    func login(requestData: Data, registrationToken: String) -> AnyPublisher<TokenModelResponse, ApplicationError>?{
+     func login(requestData: Data, registrationToken: String) -> AnyPublisher<TokenModelResponse, ApplicationError>?{
         var request: URLRequest?
         do {
             request = try AuthNetworkRouter.emailLogin(body: requestData, registrationToken: registrationToken).asURLRequest()

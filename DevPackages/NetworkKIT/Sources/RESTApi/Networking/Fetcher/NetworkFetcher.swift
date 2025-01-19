@@ -8,10 +8,10 @@
 import Foundation
 import Combine
 
-struct NetworkFetcher {
-    
-    let retries: UInt = 3
-    
+internal struct NetworkFetcher {
+
+    private let retries: UInt = 3
+
     func run<T: Decodable>(_ request: URLRequest,
                            chainedRequest: AnyPublisher<URLSession.ErasedDataTaskPublisher.Output, Error>? = nil,
                            _ decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<T, ApplicationError> {

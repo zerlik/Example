@@ -6,6 +6,7 @@
 //
 import Foundation
 import Combine
+import NetworkKIT
 
 protocol InputMainRemoteDataManagerProtocol: AnyObject{
     var output: OutputMainRemoteDataManagerProtocol?{ get set }

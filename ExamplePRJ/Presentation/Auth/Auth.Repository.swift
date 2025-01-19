@@ -6,6 +6,7 @@
 //
 
 import Combine
+import NetworkKIT
 
 protocol InputAuthRemoteDataManagerProtocol: AnyObject{
     func registrationEmailREST(email: String, password: String)

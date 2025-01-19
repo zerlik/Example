@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NetworkKIT
 
 struct Dependencies {
     let service: NetworkProvider

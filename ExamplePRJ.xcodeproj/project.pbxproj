@@ -15,6 +15,8 @@
 		1CFD4DD42D3D654700EC9573 /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 1CFD4DD32D3D654700EC9573 /* GRPC */; };
 		1CFD4DD62D3D654700EC9573 /* GRPCReflectionService in Frameworks */ = {isa = PBXBuildFile; productRef = 1CFD4DD52D3D654700EC9573 /* GRPCReflectionService */; };
 		1CFD4DD82D3D654700EC9573 /* protoc-gen-grpc-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 1CFD4DD72D3D654700EC9573 /* protoc-gen-grpc-swift */; };
+		1CFD4DDF2D3D69F100EC9573 /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 1CFD4DDE2D3D69F100EC9573 /* GRPC */; };
+		1CFD4ED62D3D73D000EC9573 /* NetworkKIT in Frameworks */ = {isa = PBXBuildFile; productRef = 1CFD4ED52D3D73D000EC9573 /* NetworkKIT */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,7 @@
 		1C9FBADF2CA86D5B00DE6652 /* ExamplePRJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExamplePRJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CC8484A2D345A2800CCB911 /* ExamplePRJTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExamplePRJTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CC848572D345AE400CCB911 /* email-stubs.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "email-stubs.xml"; sourceTree = "<group>"; };
+		1CFD4DE82D3D6C2100EC9573 /* NetworkKIT */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkKIT; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -90,6 +93,7 @@
 				1CE12C0E2CA9CB2200BD11AA /* SnapKit in Frameworks */,
 				1CD01AE32CAE0FA80030F992 /* ZSWTappableLabel in Frameworks */,
 				1CFD4DD22D3D654700EC9573 /* CGRPCZlib in Frameworks */,
+				1CFD4ED62D3D73D000EC9573 /* NetworkKIT in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CFD4DDF2D3D69F100EC9573 /* GRPC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,10 +111,12 @@
 		1C9FBAD62CA86D5B00DE6652 = {
 			isa = PBXGroup;
 			children = (
+				1CFD4DE72D3D6BB800EC9573 /* DevPackages */,
 				1CC848572D345AE400CCB911 /* email-stubs.xml */,
 				1C9FBAE12CA86D5B00DE6652 /* ExamplePRJ */,
 				1CC8484B2D345A2800CCB911 /* ExamplePRJTests */,
 				1C05F8642D3AC55F0061BABC /* ExamplePRJUITests */,
+				1CFD4ECD2D3D6EC800EC9573 /* Frameworks */,
 				1C9FBAE02CA86D5B00DE6652 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -122,6 +129,21 @@
 				1C05F8632D3AC55F0061BABC /* ExamplePRJUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1CFD4DE72D3D6BB800EC9573 /* DevPackages */ = {
+			isa = PBXGroup;
+			children = (
+				1CFD4DE82D3D6C2100EC9573 /* NetworkKIT */,
+			);
+			path = DevPackages;
+			sourceTree = "<group>";
+		};
+		1CFD4ECD2D3D6EC800EC9573 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +183,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1CFD4DDB2D3D68B600EC9573 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				1C9FBAE12CA86D5B00DE6652 /* ExamplePRJ */,
@@ -173,6 +196,7 @@
 				1CFD4DD32D3D654700EC9573 /* GRPC */,
 				1CFD4DD52D3D654700EC9573 /* GRPCReflectionService */,
 				1CFD4DD72D3D654700EC9573 /* protoc-gen-grpc-swift */,
+				1CFD4ED52D3D73D000EC9573 /* NetworkKIT */,
 			);
 			productName = ExamplePRJ;
 			productReference = 1C9FBADF2CA86D5B00DE6652 /* ExamplePRJ.app */;
@@ -189,6 +213,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1CFD4DDD2D3D69D200EC9573 /* PBXTargetDependency */,
 				1CC8484F2D345A2800CCB911 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
@@ -196,6 +221,7 @@
 			);
 			name = ExamplePRJTests;
 			packageProductDependencies = (
+				1CFD4DDE2D3D69F100EC9573 /* GRPC */,
 			);
 			productName = ExamplePRJTests;
 			productReference = 1CC8484A2D345A2800CCB911 /* ExamplePRJTests.xctest */;
@@ -311,6 +337,14 @@
 			isa = PBXTargetDependency;
 			target = 1C9FBADE2CA86D5B00DE6652 /* ExamplePRJ */;
 			targetProxy = 1CFD4CEC2D3D598C00EC9573 /* PBXContainerItemProxy */;
+		};
+		1CFD4DDB2D3D68B600EC9573 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 1CFD4DDA2D3D68B600EC9573 /* GRPC */;
+		};
+		1CFD4DDD2D3D69D200EC9573 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 1CFD4DDC2D3D69D200EC9573 /* GRPC */;
 		};
 /* End PBXTargetDependency section */
 
@@ -669,6 +703,25 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1CFD4DD02D3D654700EC9573 /* XCRemoteSwiftPackageReference "grpc-swift" */;
 			productName = "protoc-gen-grpc-swift";
+		};
+		1CFD4DDA2D3D68B600EC9573 /* GRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1CFD4DD02D3D654700EC9573 /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = GRPC;
+		};
+		1CFD4DDC2D3D69D200EC9573 /* GRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1CFD4DD02D3D654700EC9573 /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = GRPC;
+		};
+		1CFD4DDE2D3D69F100EC9573 /* GRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1CFD4DD02D3D654700EC9573 /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = GRPC;
+		};
+		1CFD4ED52D3D73D000EC9573 /* NetworkKIT */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkKIT;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
