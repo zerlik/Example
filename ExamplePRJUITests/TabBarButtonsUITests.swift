@@ -13,13 +13,14 @@ final class TabBarButtonsUITests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
     }
-
+    
+    @MainActor
     func testUITabBarButtons() throws {
         let app = XCUIApplication()
         app.launch()
-        let button = app.buttons["TabBarButtonHome"].firstMatch
-        XCTAssertTrue(button.exists)
-        XCTAssertEqual(button.title,  Localization.TabBar.home)
+        let button = app.buttons["TabBarButtonHome"].firstMatch // get the ui element for validation ( button in tabbar)
+        XCTAssertTrue(button.exists) // check Has the element been created
+        XCTAssertEqual(button.title,  Localization.TabBar.home) // check title element
     }
 
 

@@ -21,9 +21,9 @@ final class TabBarButtonsTests: XCTestCase {
 
     }
 
-
+// Unit test
     func testUnitTabBarButtons() throws {
-        let tabBarController = tabBarController as? MainTabBarViewController
-        XCTAssertEqual(tabBarController?.customTabBarView.buttonHome.titleLabel?.text,  Localization.TabBar.home)
+        let tabBarController = tabBarController as? MainTabBarViewController // create tabbar Controller
+        XCTAssertEqual(tabBarController?.customTabBarView.buttonHome.titleLabel?.text,  Localization.TabBar.home)// check title button home in tab controller
     }
 }
