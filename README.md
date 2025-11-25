@@ -1,4 +1,4 @@
-# VIPER(SwiftUIkit, SwiftUI) + Modularisation (NetworkKIt in SwiftPackage) + UnitTests
+# Example proj: VIPER, (SwiftUIkit (SnapKit) & SwiftUI) & Combine, Modularisation (NetworkKIt in SwiftPackage) + UnitTests 
 Project Overview
 This demonstration project highlights my expertise in Swift, SwiftUI, and UIKit, showcasing modern architectural patterns and testing practices.
 
