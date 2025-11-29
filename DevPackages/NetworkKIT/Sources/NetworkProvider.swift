@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-public protocol ApiClientAuthProtocols {
+ protocol ApiClientAuthProtocols {
      func login(requestData: Data, registrationToken: String) -> AnyPublisher<TokenModelResponse, ApplicationError>?
      func registration(requestData: Data, registrationToken: String
     ) -> AnyPublisher<TokenModelResponse, ApplicationError>?
@@ -18,7 +18,7 @@ public class NetworkProvider {
 
     public init(){}
 
-    public func makeAuthNetwork() -> ApiClientAuthProtocols {
+     func makeAuthNetwork() -> ApiClientAuthProtocols {
         let network = NetworkFetcher()
         return ApiClientAuth(network: network)
     }

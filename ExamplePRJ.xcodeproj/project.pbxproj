@@ -112,10 +112,10 @@
 			isa = PBXGroup;
 			children = (
 				1CFD4DE72D3D6BB800EC9573 /* DevPackages */,
-				1CC848572D345AE400CCB911 /* email-stubs.xml */,
 				1C9FBAE12CA86D5B00DE6652 /* ExamplePRJ */,
 				1CC8484B2D345A2800CCB911 /* ExamplePRJTests */,
 				1C05F8642D3AC55F0061BABC /* ExamplePRJUITests */,
+				1CC848572D345AE400CCB911 /* email-stubs.xml */,
 				1CFD4ECD2D3D6EC800EC9573 /* Frameworks */,
 				1C9FBAE02CA86D5B00DE6652 /* Products */,
 			);
